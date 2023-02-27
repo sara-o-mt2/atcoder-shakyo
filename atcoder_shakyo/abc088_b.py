@@ -1,9 +1,7 @@
 import sys
-from sys import stdin
-input = stdin.readline
 
 
-def solve(cards):
+def get_max_score_diff(cards):
     score_a = 0
     score_b = 0
     cards.sort(reverse=True)
@@ -15,13 +13,13 @@ def solve(cards):
     return score_a - score_b
 
 
-def main(args):
-    N = int(input())
-    cards = [int(x) for x in input().split()]
-    ans = solve(cards)
+def main():
+    N = int(sys.stdin.readline().rstrip())
+    cards = [int(x) for x in sys.stdin.readline().rstrip().split()]
+    ans = get_max_score_diff(cards)
     print(ans)
 
 
 if __name__ == '__main__':
-    main(sys.argv[1:])
+    main()
     
